@@ -21,12 +21,11 @@ class VideoPlayarListScreen extends StatelessWidget {
           ),
           VideoPlayarItem(
             videoPlayerController: VideoPlayerController.network
-              ('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'),
+              (''),
           ),
 //          VideoPlayarItem(
 //            videoPlayerController: VideoPlayerController.network
-//              ('http://commondatastorage.googleapis'
-//                '.com/gtv-videos-bucket/sample/error.mp4'),
+//              (''),
 //          ),
         ],
       ),
