@@ -53,7 +53,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
             Container(
               padding: const EdgeInsets.only(top: 20.0),
             ),
-            const Text('With assets mp4'),
+            const Text('VIDEO PLAYER DEMO 1'),
             Container(
               padding: const EdgeInsets.all(20),
               child: AspectRatio(
@@ -116,7 +116,7 @@ class _BumbleBeeRemoteVideoState extends State<_BumbleBeeRemoteVideo> {
       child: Column(
         children: <Widget>[
           Container(padding: const EdgeInsets.only(top: 20.0)),
-          const Text('With remote mp4'),
+          const Text('Video Player Example'),
           Container(
             padding: const EdgeInsets.all(20),
             child: AspectRatio(
