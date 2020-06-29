@@ -7,7 +7,7 @@ import 'package:video_player/video_player.dart';
 class ChewieDemoScreen extends StatefulWidget {
   static const String id = 'chewiedemo_screen';
 
-  ChewieDemoScreen({this.title = 'VideoPlayar Demo'});
+  ChewieDemoScreen({this.title = 'Portfolio'});
 
   final String title;
 
@@ -23,6 +23,8 @@ class _ChewieDemoScreenState extends State<ChewieDemoScreen> {
   VideoPlayerController _videoPlayerController2;
   VideoPlayerController _videoPlayerController3;
   VideoPlayerController _videoPlayerController4;
+  VideoPlayerController _videoPlayerController5;
+  VideoPlayerController _videoPlayerController6;
   ChewieController _chewieController;
 
   @override
@@ -32,16 +34,19 @@ class _ChewieDemoScreenState extends State<ChewieDemoScreen> {
         'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
     _videoPlayerController2 = VideoPlayerController.network(
         'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4');
-    _videoPlayerController3 = VideoPlayerController.network(
-        'https://commondatastorage.googleapis'
-            '.com/gtv-videos-bucket/sample/BigBuckBunny.mp4');
-    _videoPlayerController4 = VideoPlayerController.network(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4');
+    _videoPlayerController3 = VideoPlayerController.asset
+      ('assets/videos/demo04.mp4');
+    _videoPlayerController4 = VideoPlayerController.asset(
+        'assets/videos/demo03.mp4');
+    _videoPlayerController5 = VideoPlayerController.asset(
+        'assets/videos/demo01.mp4');
+    _videoPlayerController6 = VideoPlayerController.asset(
+        'assets/videos/demo02.mp4');
     _chewieController = ChewieController(
-      videoPlayerController: _videoPlayerController1,
-      aspectRatio: 3 / 2,
-      autoPlay: true,
-      looping: true,
+      videoPlayerController: _videoPlayerController3,
+      aspectRatio: 1 / 1,
+      autoPlay: false,
+      looping: false,
       // Try playing around with some of these other options:
 
 //       showControls: false,
@@ -62,6 +67,10 @@ class _ChewieDemoScreenState extends State<ChewieDemoScreen> {
   void dispose() {
     _videoPlayerController1.dispose();
     _videoPlayerController2.dispose();
+    _videoPlayerController3.dispose();
+    _videoPlayerController4.dispose();
+    _videoPlayerController5.dispose();
+    _videoPlayerController6.dispose();
     _chewieController.dispose();
     super.dispose();
   }
@@ -98,12 +107,9 @@ class _ChewieDemoScreenState extends State<ChewieDemoScreen> {
                   child: FlatButton(
                     onPressed: () {
                       setState(() {
-                        _chewieController.dispose();
-                        _videoPlayerController2.pause();
-                        _videoPlayerController2.seekTo(Duration(seconds: 0));
                         _chewieController = ChewieController(
                           videoPlayerController: _videoPlayerController1,
-                          aspectRatio: 3 / 2,
+                          aspectRatio: 4 / 3,
                           autoPlay: true,
                           looping: true,
                         );
@@ -119,12 +125,9 @@ class _ChewieDemoScreenState extends State<ChewieDemoScreen> {
                   child: FlatButton(
                     onPressed: () {
                       setState(() {
-                        _chewieController.dispose();
-                        _videoPlayerController1.pause();
-                        _videoPlayerController1.seekTo(Duration(seconds: 0));
                         _chewieController = ChewieController(
                           videoPlayerController: _videoPlayerController2,
-                          aspectRatio: 3 / 2,
+                          aspectRatio: 4 / 3,
                           autoPlay: true,
                           looping: true,
                         );
@@ -144,23 +147,16 @@ class _ChewieDemoScreenState extends State<ChewieDemoScreen> {
                   child: FlatButton(
                     onPressed: () {
                       setState(() {
-                        _chewieController.dispose();
-                        _videoPlayerController4.pause();
-                        _videoPlayerController4.seekTo(Duration(seconds: 0));
-                        _videoPlayerController2.pause();
-                        _videoPlayerController2.seekTo(Duration(seconds: 0));
-                        _videoPlayerController1.pause();
-                        _videoPlayerController1.seekTo(Duration(seconds: 0));
                         _chewieController = ChewieController(
                           videoPlayerController: _videoPlayerController3,
-                          aspectRatio: 3 / 2,
+                          aspectRatio: 1 / 1,
                           autoPlay: true,
                           looping: true,
                         );
                       });
                     },
                     child: Padding(
-                      child: Text("Video 3"),
+                      child: Text("Video 3 - PlamaiLife"),
                       padding: EdgeInsets.symmetric(vertical: 16.0),
                     ),
                   ),
@@ -169,13 +165,6 @@ class _ChewieDemoScreenState extends State<ChewieDemoScreen> {
                   child: FlatButton(
                     onPressed: () {
                       setState(() {
-                        _chewieController.dispose();
-                        _videoPlayerController3.pause();
-                        _videoPlayerController3.seekTo(Duration(seconds: 0));
-                        _videoPlayerController2.pause();
-                        _videoPlayerController2.seekTo(Duration(seconds: 0));
-                        _videoPlayerController1.pause();
-                        _videoPlayerController1.seekTo(Duration(seconds: 0));
                         _chewieController = ChewieController(
                           videoPlayerController: _videoPlayerController4,
                           aspectRatio: 3 / 2,
@@ -186,7 +175,47 @@ class _ChewieDemoScreenState extends State<ChewieDemoScreen> {
                     },
                     child: Padding(
                       padding: EdgeInsets.symmetric(vertical: 16.0),
-                      child: Text("Video 4"),
+                      child: Text("Video 4 - Carousels"),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: FlatButton(
+                    onPressed: () {
+                      setState(() {
+                        _chewieController = ChewieController(
+                          videoPlayerController: _videoPlayerController5,
+                          aspectRatio: 4 / 3,
+                          autoPlay: true,
+                          looping: true,
+                        );
+                      });
+                    },
+                    child: Padding(
+                      child: Text("Video 5 - ToDo list"),
+                      padding: EdgeInsets.symmetric(vertical: 16.0),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: FlatButton(
+                    onPressed: () {
+                      setState(() {
+                        _chewieController = ChewieController(
+                          videoPlayerController: _videoPlayerController6,
+                          aspectRatio: 3 / 2,
+                          autoPlay: true,
+                          looping: true,
+                        );
+                      });
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 16.0),
+                      child: Text("Video 6 - Questionnaire"),
                     ),
                   ),
                 )

@@ -22,8 +22,9 @@ class JustVideoPlayerState extends State<JustVideoPlayer> {
 
   void createVideo() {
     if (playerController == null) {
-      playerController = VideoPlayerController.network(
-          "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4")
+//      playerController = VideoPlayerController.network(
+//          "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4")
+        playerController = VideoPlayerController.asset('assets/videos/demo01.mp4')
         ..addListener(listener)
         ..setVolume(1.0)
         ..initialize()
@@ -49,7 +50,7 @@ class JustVideoPlayerState extends State<JustVideoPlayer> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bee Video'),
+        title: Text('Portfolio'),
       ),
       body: Column(
         children: [
@@ -57,7 +58,7 @@ class JustVideoPlayerState extends State<JustVideoPlayer> {
           FlatButton(
             child: Row(
               children: [
-                Text('BEE VIDEO'),
+                Text('App Demo 01 - Study List'),
                 Icon(Icons.play_circle_filled, size: 60, color: Colors.red,),
               ],
             ),
@@ -67,7 +68,7 @@ class JustVideoPlayerState extends State<JustVideoPlayer> {
             } ,
           ),
           Container(
-            color: Colors.amber,
+            color: Colors.cyan,
               child: AspectRatio(
                   aspectRatio: 16 / 9,
                   child: Container(
@@ -85,11 +86,3 @@ class JustVideoPlayerState extends State<JustVideoPlayer> {
     );
   }
 }
-
-//floatingActionButton: FloatingActionButton(
-//onPressed: () {
-//createVideo();
-//playerController.play();
-//},
-//child: Icon(Icons.play_arrow),
-//),

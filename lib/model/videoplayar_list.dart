@@ -33,7 +33,7 @@ class _VideoPlayarItemState extends State<VideoPlayarItem> {
         return Center(
           child: Text(
             errorMessage,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.black),
           ),
         );
       }

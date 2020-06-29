@@ -22,5 +22,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-  - assets/videos/Butterfly-209.mp4
   - assets/videos/AppDemo01_studylist.mp4
+  - assets/videos/demo01.mp4
+  - assets/videos/demo02.mp4
+  - assets/videos/demo03.mp4
+  - assets/videos/demo04.mp4

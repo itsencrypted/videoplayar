@@ -31,7 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             SizedBox(height: 25,),
             FlatButton(
               color: Colors.amber,
-              child: Text('VideoPlayer Demo'),
+              child: Text('VideoPlayer Demo - Not working'),
               onPressed: (){Navigator.pushNamed(context, VideoPlayerScreen.id);},
             ),
             SizedBox(height: 25,),
@@ -49,7 +49,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             SizedBox(height: 25,),
             FlatButton(
               color: Colors.greenAccent,
-              child: Text('VideoPlayar Demo4'),
+              child: Text('VideoPlayar Demo4 - this one'),
               onPressed: (){Navigator.pushNamed(context, VideoPlayarListScreen.id);},
             ),
           ]

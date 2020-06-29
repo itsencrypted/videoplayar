@@ -14,19 +14,37 @@ class VideoPlayarListScreen extends StatelessWidget {
       ),),
       body: ListView(
         children: <Widget>[
-          VideoPlayarItem(
-              videoPlayerController: VideoPlayerController.asset
-                ('assets/videos/AppDemo01_studylist.mp4'),
-          looping: true,
+          Column(
+            children: [
+              Row(
+                children: [
+                  Text('App Demo', style: TextStyle(fontWeight: FontWeight
+                      .bold, fontSize: 50),),
+                  Text('Study List - a To Do list application that saves '
+                      'states and updates the number of items to be completed'
+                      '.', style: TextStyle(
+                  fontSize: 20),)
+                ],
+              ),
+              Row(
+                children: [
+                  VideoPlayarItem(
+                    videoPlayerController: VideoPlayerController.asset('assets/videos/demo01.mp4'),
+                    looping: false,
+                  ),
+                ],
+              ),
+            ],
           ),
-          VideoPlayarItem(
-            videoPlayerController: VideoPlayerController.network
-              (''),
-          ),
-//          VideoPlayarItem(
-//            videoPlayerController: VideoPlayerController.network
-//              (''),
-//          ),
+          Column(
+            children: [
+              VideoPlayarItem(
+                videoPlayerController: VideoPlayerController.asset
+                  ('assets/videos/demo02.mp4'),
+                looping: false,
+              ),
+            ],
+          )
         ],
       ),
     );
